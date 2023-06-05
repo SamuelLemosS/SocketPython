@@ -29,15 +29,15 @@ elif tipoCliente.lower() == "nao" or tipoCliente.lower() == "n" or tipoCliente.l
         topico = input("Digite o tópico que deseja receber:\n")
         s.send(topico.encode())
 
-        while True:
+        #while True:
             ultimaMensagem = s.recv(1024).decode() #ele nao pega nada quando passa pela segunda vez
             if ultimaMensagem:
                 print("A última mensagem do topico",topico,"é: ",ultimaMensagem)
                 ultima = ultimaMensagem
             else:
                 print("Nenhuma nova mensagem")
-
-            time.sleep(1)
+            break
+            #time.sleep(1)
 
 else:
     print("Digite 'sim' ou 'não', por favor.")
