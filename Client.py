@@ -32,7 +32,7 @@ elif tipoCliente.lower() == "nao" or tipoCliente.lower() == "n" or tipoCliente.l
         while True:
             ultimaMensagem = s.recv(1024).decode() #ele nao pega nada quando passa pela segunda vez
             if ultimaMensagem:
-                print(ultimaMensagem)
+                print("A última mensagem do topico",topico,"é: ",ultimaMensagem)
                 ultima = ultimaMensagem
             else:
                 print("Nenhuma nova mensagem")
