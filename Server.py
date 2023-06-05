@@ -30,7 +30,7 @@ def handle_connection(conn):
             topico = conn.recv(1024).decode()
             if topico in topicos:
                 ultimaMensagem = topicos[topico]
-                conn.send(("A última mensagem do topico",topico,"é: ",ultimaMensagem).encode())
+                conn.send(ultimaMensagem.encode())
             else:
                 conn.send("Esse tópico não existe ou não possui mensagens".encode())
             print("Novo subscriber conectado ao tópico", topico)
